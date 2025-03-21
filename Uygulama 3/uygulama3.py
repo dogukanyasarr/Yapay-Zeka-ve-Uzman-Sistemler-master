@@ -1,38 +1,38 @@
-def carpim_tablosu():
-    sayi = int(input("Bir sayı giriniz: "))
+def multiplication_table():
+    num = int(input("Bir sayı giriniz: "))
     for i in range(1, 11):
-        print(sayi * i, end=" ")
+        print(num * i, end=" ")
     print()
 
-def basamak_sayisi():
-    sayi = int(input("Bir sayı giriniz: "))
-    basamak = 0
-    while sayi > 0:
-        sayi //= 10
-        basamak += 1
-    print("Basamak sayısı:", basamak)
+def digit_count():
+    num = int(input("Bir sayı giriniz: "))
+    count = 0
+    while num > 0:
+        num //= 10
+        count += 1
+    print("Basamak sayısı:", count)
 
-def bes_bolunenler():
-    sayisalDegerler = [12, 15, 32, 42, 55, 75, 122, 132, 150, 180, 200]
-    for sayi in sayisalDegerler:
-        if sayi > 150:
+def divisible_by_five():
+    numbers = [12, 15, 32, 42, 55, 75, 122, 132, 150, 180, 200]
+    for num in numbers:
+        if num > 150:
             break
-        if sayi % 5 == 0:
-            print(sayi, end=", ")
+        if num % 5 == 0:
+            print(num, end=", ")
     print()
 
-def aralikta_bolunebilir():
-    a = int(input("a değerini giriniz: "))
-    b = int(input("b değerini giriniz: "))
-    c = int(input("c değerini giriniz: "))
-    sayac = sum(1 for i in range(a, b + 1) if i % c == 0)
-    print("Bölünebilen sayı adedi:", sayac)
+def count_divisibles():
+    start = int(input("Başlangıç değerini giriniz: "))
+    end = int(input("Bitiş değerini giriniz: "))
+    divisor = int(input("Bölünecek sayıyı giriniz: "))
+    count = sum(1 for i in range(start, end + 1) if i % divisor == 0)
+    print("Bölünebilen sayı adedi:", count)
 
-def cift_sayi_ciktisi():
+def even_number_output():
     for i in range(1, 100):
         print(f"{i} - {100 - i}")
 
-def ip_adresi_arttir():
+def increment_ip_address():
     ip = list(map(int, input("IP adresini giriniz (boşluk ile ayırarak): ").split()))
     for _ in range(5):
         ip[3] += 1
@@ -43,17 +43,17 @@ def ip_adresi_arttir():
                     ip[i-1] += 1
         print(" ".join(map(str, ip)))
 
-secenekler = {
-    "1": carpim_tablosu,
-    "2": basamak_sayisi,
-    "3": bes_bolunenler,
-    "4": aralikta_bolunebilir,
-    "5": cift_sayi_ciktisi,
-    "6": ip_adresi_arttir
+options = {
+    "1": multiplication_table,
+    "2": digit_count,
+    "3": divisible_by_five,
+    "4": count_divisibles,
+    "5": even_number_output,
+    "6": increment_ip_address
 }
 
-secim = input("Çalıştırmak istediğiniz ödevin numarasını giriniz (1-6): ")
-if secim in secenekler:
-    secenekler[secim]()
+choice = input("Çalıştırmak istediğiniz ödevin numarasını giriniz (1-6): ")
+if choice in options:
+    options[choice]()
 else:
     print("Geçersiz seçim!")

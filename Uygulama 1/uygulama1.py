@@ -1,37 +1,36 @@
 import numpy as np
 
-a = np.array([5, 8, 11])
+arr = np.array([3, 7, 10])
 
-b = np.array([[5, 8, 11], [6, 9, 45]])
+matrix = np.array([[3, 7, 10], [5, 12, 40]])
 
-sifir_matrisi = np.zeros((3, 3))
+zero_matrix = np.zeros((3, 3))
 
-karekok = np.sqrt(a)
-logaritma = np.log(a)
+sqrt_values = np.sqrt(arr)
+log_values = np.log(arr)
 
-ortalama = np.mean(a)
-transpoz = np.transpose(b)
+mean_value = np.mean(arr)
+transpose_matrix = np.transpose(matrix)
 
-eleman_cikar = np.delete(b, 1, axis=0)
+removed_element = np.delete(matrix, 1, axis=0)
 
 import pandas as pd
 
-s = pd.Series([12, 56, 23, 21], index=['a', 'b', 'c', 'd'])
+series = pd.Series([15, 42, 28, 19], index=['x', 'y', 'z', 'w'])
 
-değer_sec = s.iloc[1]
+selected_value = series.iloc[1]
 
-satir_sil = s.drop(['a'])
-sutun_sil = s.drop(['b'], axis=0)
+row_deleted = series.drop(['x'])
+column_deleted = series.drop(['y'], axis=0)
 
-df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})
-bilgi = df.info()
-istatistikler = df.describe()
+data_frame = pd.DataFrame({'Col1': [2, 4, 6], 'Col2': [5, 10, 15]})
+df_info = data_frame.info()
+df_stats = data_frame.describe()
 
-
-print("Numpy Dizi:", a)
-print("Sıfır Matrisi:\n", sifir_matrisi)
-print("Ortalama:", ortalama)
-print("Transpoz:\n", transpoz)
-print("Pandas Series:\n", s)
-print("Tablo Bilgileri:", bilgi)
-print("İstatistikler:\n", istatistikler)
+print("Numpy Array:", arr)
+print("Zero Matrix:\n", zero_matrix)
+print("Mean Value:", mean_value)
+print("Transposed Matrix:\n", transpose_matrix)
+print("Pandas Series:\n", series)
+print("DataFrame Info:", df_info)
+print("Statistics:\n", df_stats)
